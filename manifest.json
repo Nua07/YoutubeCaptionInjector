@@ -1,0 +1,21 @@
+{
+  "name": "YoutubeCaptionInjector",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "YoutubeCaptionInjector",
+    "default_icon": "enable.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/watch?v=*"],
+      "js": ["inject.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage"]
+}
